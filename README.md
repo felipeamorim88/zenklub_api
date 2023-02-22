@@ -58,6 +58,56 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Sample requests
+
+```bash
+# get all professionals
+localhost:3000/professional
+
+# POST professional
+localhost:3000/professional
+## body
+{
+    "nome":"Felipe Amorim"
+}
+
+# get all timeslot
+GET /timeslot
+
+# POST timeslot
+POST /timeslot
+## body
+ {
+    "initialTime": "2023/01/02 08:30",
+    "finishTime": "2023/01/02 12:30",
+    "professionalId": 1
+}
+
+# GET timeslot by range
+GET /timeslot
+## body
+ {
+    "initialTime": "2023/01/02 08:30",
+    "finishTime": "2023/01/02 12:30",
+    "professionalId": 1
+}
+
+# get all sessions
+GET /session
+
+# POST session
+POST /session
+## body
+ {
+    "initialTime": "2023/01/02 08:00",
+    "timeslotId": 1
+}
+
+// obs: It verifies if initialTime it's available for the current timeslot(timeslotId)
+// obs2: accessing on the browser localhost:3000/swagger it provides available endpoints
+
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
